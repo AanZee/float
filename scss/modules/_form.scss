@@ -1,0 +1,636 @@
+.form {
+	font-size      : $form--setting-font-size-form;
+	line-height    : $form--setting-line-height-form;
+	padding-bottom : $form--setting-padding-bottom-form;
+	label[for] {
+		cursor: pointer;
+	}
+}
+
+
+.form--intro {
+	border-bottom: $form--setting-border-bottom-intro;
+}
+
+
+.form--title {
+	font-size   : $form--setting-font-size-title;
+	line-height : $form--setting-line-height-title;
+	font-weight : $form--setting-font-weight-title;
+	color       : $form--color-text-title;
+}
+
+
+.form--top-error {
+	background-color: $form--color-error-background;
+	h2 {
+		color         : $form--color-error;
+		font-size     : $form--setting-font-size-subtitle;
+		font-weight   : $form--setting-font-weight-subtitle;
+		margin-bottom : $form--setting-margin-bottom-subtitle;
+	}
+}
+
+
+.form--fieldset {
+	border-bottom : $form--setting-border-bottom-fieldset;
+	> *:first-child {
+		padding-top: 0;
+		margin-top: 0;
+	}
+	> *:last-child {
+		padding-bottom: 0;
+		margin-bottom: 0;
+	}
+	&:last-child {
+		border-bottom: none;
+	}
+}
+
+
+.form--subtitle {
+	font-size     : $form--setting-font-size-subtitle;
+	font-weight   : $form--setting-font-weight-subtitle;
+	color         : $form--color-text-subtitle;
+	margin-top    : $form--setting-margin-top-subtitle;
+	margin-bottom : $form--setting-margin-bottom-subtitle;
+}
+
+
+.form--row {
+	padding: $form--setting-padding-row;
+	> .form--messages .form--message-error {
+		@include arrow-on-bottom-line(8px, $form--color-border-error-message, $form--color-background-error-message, 15px);
+	}
+}
+
+
+.form--mainbox {
+	@include clearfix;
+	position: relative;
+	.form--message-error {
+		@include arrow-on-top-line(8px, $form--color-border-error-message, $form--color-background-error-message, 15px);
+	}
+}
+
+
+.form--inline-group {
+	@include clearfix;
+}
+
+
+.form--icon-holder {
+	.form--icon-check,
+	.form--icon-exclamation {
+		width: 18px;
+		height: 18px;
+		line-height: 16px;
+		border-radius: 8px;
+		text-align: center;
+		color: white;
+		font-size: 9px;
+		position: absolute;
+		left: -9px;
+		top: 14px;
+		border: 2px solid $form--color-background-inner;
+		display: none;
+	}
+
+	.form--icon-check {
+		background-color: $form--color-valid;
+	}
+
+	.form--icon-exclamation {
+		background-color: $form--color-error;
+	}
+}
+
+
+//////////////////////////////////////////////////////////////
+/////////////////////////// INPUTS ///////////////////////////
+//////////////////////////////////////////////////////////////
+
+
+.form--input {
+	@include appearance(none);
+	font-family      : inherit;
+	color            : inherit;
+	border-radius    : $form--setting-border-radius;
+	padding          : $form--setting-input-padding;
+	height           : $form--setting-input-height;
+	font-size        : $form--setting-font-size-input;
+	line-height      : $form--setting-input-line-height;
+	background-color : $form--setting-input-background-color;
+	box-shadow       : $form--setting-input-box-shadow;
+	&:focus {
+		box-shadow: $form--setting-input-box-shadow-focus;
+	}
+}
+
+.form--input-radio:focus ~ .form--input-indicator,
+.form--input-checkbox:focus ~ .form--input-indicator {
+	box-shadow: $form--setting-car-box-shadow-focus;
+}
+
+.form--input-radio:checked ~ .form--input-indicator:before {
+	background-color: $form--setting-car-checked-color;
+}
+
+.form--input-checkbox:checked ~ .form--input-indicator {
+	color: $form--setting-car-checked-color;
+}
+
+.form--input-radio,
+.form--input-checkbox {
+	position: absolute;
+	opacity: 0;
+	z-index: -1;
+}
+
+.form--input-select {
+	@include appearance(none);
+	font-family      : inherit;
+	cursor           : pointer;
+	display          : inline-block;
+	margin           : 0;
+	border           : 0;
+	outline          : 0;
+	padding          : $form--setting-input-padding;
+	height           : $form--setting-input-height;
+	font-size        : $form--setting-font-size-input;
+	line-height      : $form--setting-input-line-height;
+	background-color : $form--setting-input-background-color;
+	border-radius    : $form--setting-border-radius;
+	box-shadow       : $form--setting-select-box-shadow;
+	&:focus {
+		box-shadow: $form--setting-select-box-shadow-focus;
+	}
+}
+
+/* Undo the Firefox inner focus ring */
+.form--input-select:-moz-focusring {
+	color       : transparent;
+	text-shadow : 0 0 0 $form--color-text;
+}
+
+/* Hide the arrow in IE10 and up */
+.form--input-select::-ms-expand {
+	display: none;
+}
+
+/* Firefox hack to hide the arrow */
+@-moz-document url-prefix() {
+	.form--input-select {
+		text-indent   : 0.01px;
+		text-overflow : '';
+		padding-right : 20px;
+	}
+}
+
+/* IE9 hack to hide the arrow */
+@media screen and (min-width:0\0) {
+	.form--input-select {
+		z-index : 1;
+		padding : $form--setting-input-padding;
+	}
+
+	.form--label-select:after {
+		z-index: 5;
+	}
+
+	.form--label-select:before {
+		position         : absolute;
+		top              : 0;
+		right            : 15px;
+		bottom           : 0;
+		z-index          : 2;
+		content          : "";
+		display          : block;
+		width            : 24px;
+		background-color : $form--setting-input-background-color;
+	}
+	
+	.form--input-select:hover,
+	.form--input-select:focus,
+	.form--input-select:active {
+		color            : $form--color-text;
+		background-color : $form--setting-input-background-color;
+	}
+}
+
+.form--label-select {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown arrow */
+.form--label-select:after {
+	position       : absolute;
+	top            : 50%;
+	right          : 20px;
+	display        : inline-block;
+	content        : "";
+	width          : 0;
+	height         : 0;
+	margin-top     : -3px;
+	pointer-events : none;
+	border-right   : 6px solid transparent;
+	border-bottom  : 6px solid transparent;
+	border-left    : 6px solid transparent;
+	border-top     : 6px solid $form--color-text;
+}
+
+
+
+//////////////////////////////////////////////////////////////
+/////////////////////////// LABELS ///////////////////////////
+//////////////////////////////////////////////////////////////
+
+
+.form--label {
+	display: block;
+	font-weight: $form--setting-font-weight-label;
+	line-height: $form--setting-input-line-height;
+}
+
+.form--label-required {
+	&:after {
+		content: '*';
+		color: $form--color-error;
+	}
+}
+
+.form--label-radio,
+.form--label-checkbox {
+	position      : relative;
+	cursor        : pointer;
+	float         : left;
+	line-height   : $form--setting-input-line-height;
+	padding-left  : $form--setting-car-padding-left;
+	padding-right : $form--setting-car-padding-right;
+	margin-right  : $form--setting-car-margin-right;
+	&.form--label-radio-solid,
+	&.form--label-checkbox-solid {
+		background-color : $form--setting-car-boxed-background;
+		padding-left     : $form--setting-car-boxed-padding-left;
+		&:first-child {
+			border-top-left-radius: $form--setting-border-radius;
+			border-bottom-left-radius: $form--setting-border-radius;
+		}
+		&:last-child {
+			border-top-right-radius: $form--setting-border-radius;
+			border-bottom-right-radius: $form--setting-border-radius;
+		}
+		.form--input-indicator {
+			left: $form--setting-car-boxed-inidcator-left;
+		}
+	}
+	.form--input-indicator {
+		@include disable-user-select;
+		display          : block;
+		position         : absolute;
+		width            : 16px;
+		height           : 16px;
+		line-height      : 16px;
+		text-align       : center;
+		top              : $form--setting-car-indicator-top;
+		left             : $form--setting-car-indicator-left;
+		color            : $form--setting-car-indicator-background;
+		background-color : $form--setting-car-indicator-background;
+		box-shadow       : $form--setting-car-indicator-box-shadow;
+	}
+}
+
+.form--label-radio .form--input-indicator {
+	border-radius: 50%;
+	font-size: 20px;
+	&:before {
+		display       : block;
+		content       : '';
+		width         : 10px;
+		height        : 10px;
+		border-radius : 50%;
+		margin        : 3px;
+		background    : $form--setting-car-indicator-background;
+	}
+}
+
+.form--label-checkbox .form--input-indicator {
+	border-radius: $form--setting-border-radius-checkbox;
+	font-size: 12px;
+	.form--icon-check {
+		line-height: 16px;
+	}
+}
+
+//////////////////////////////////////////////////////////////
+/////////////////////////// ERRORS ///////////////////////////
+//////////////////////////////////////////////////////////////
+
+
+.form--row-error {
+
+	.form--label {
+		color: $form--color-error;
+	}
+
+	.form--label-radio,
+	.form--label-checkbox {
+		background-color: $form--color-error-background;
+		padding-left: $form--setting-car-boxed-padding-left;
+		&:first-child {
+			border-top-left-radius: $form--setting-border-radius;
+			border-bottom-left-radius: $form--setting-border-radius;
+		}
+		&:last-child {
+			border-top-right-radius: $form--setting-border-radius;
+			border-bottom-right-radius: $form--setting-border-radius;
+		}
+		.form--input-indicator {
+			left: $form--setting-car-boxed-inidcator-left;
+		}
+	}
+
+	.form--input-validate.form--input {
+		box-shadow: $form--setting-input-box-shadow-error;
+		&:focus {
+			box-shadow: $form--setting-input-box-shadow-error-focus;
+		}
+	}
+
+	.form--icon-holder {
+		.form--icon-exclamation {
+			display: block;
+		}
+	}
+
+
+}
+
+.form--messages {
+	@include clearfix;
+}
+
+.form--message-error {
+	float            : left;
+	background-color : $form--color-background-error-message;
+	color            : $form--color-text;
+	padding          : $form--setting-error-message-padding;
+	max-width        : $form--setting-error-message-max-width;
+	border-radius    : $form--setting-border-radius;
+	font-size        : $form--setting-font-size-error;
+	line-height      : $form--setting-line-height-error;
+	box-shadow       : 0 0 0 1px $form--color-border-error-message;
+	margin           : $form--setting-error-box-margin;
+}
+
+
+.form--row-valid {
+	.form--icon-holder {
+		.form--icon-check {
+			display: block;
+		}
+	}
+	.form--label-required {
+		&:after {
+			content: '*';
+			color: $form--color-valid;
+		}
+	}
+	.form--input-validate.form--input {
+		box-shadow: $form--setting-input-box-shadow-valid;
+		&:focus {
+			box-shadow: $form--setting-input-box-shadow-valid-focus;
+		}
+	}
+}
+
+
+.form--description {
+	font-size: $form--setting-font-size-description;
+}
+
+.form--submit {
+	cursor           : pointer;
+	padding          : $form--setting-submit-padding;
+	font-size        : $form--setting-font-size-submit;
+	border-radius    : $form--setting-border-radius;
+	background-color : $form--setting-submit-background;
+	color            : $form--setting-submit-color;
+	border-bottom    : $form--setting-submit-border-bottom;
+	&:hover,
+	&:focus {
+		background-color: $form--setting-submit-background-hover;
+	}
+	&:active {
+		position: relative;
+		top: 1px;
+		border-bottom: none;
+		margin-bottom: 2px;
+	}
+}
+
+
+@include respond(0, $break-medium) {
+
+	.form--intro {
+		padding                                : $form--setting-padding-intro-small ;
+	}
+
+
+	.form--top-error {
+		margin: 40px 20px 0;
+		padding: 20px 20px;
+	}
+
+
+	.form--fieldset {
+		padding                                : $form--setting-padding-fieldset-small;
+	}
+
+	.form--label {
+		margin-bottom                          : $form--setting-margin-bottom-label;
+	}
+
+
+	.form--mainbox {
+		max-width                              : $form--setting-max-width-mainbox-small;
+	}
+
+
+	.form--label-radio,
+	.form--label-checkbox {
+		padding-top                            : $form--setting-padding-top-label-small;
+		padding-bottom                         : $form--setting-padding-bottom-label-small;
+	}
+
+
+	.form--input {
+		width                                  : 100%;
+		max-width                              : $form--setting-max-width-input;
+		&.form--input-width-xs { max-width : $form--setting-max-width-input-xs; }
+		&.form--input-width-s {  max-width : $form--setting-max-width-input-s; }
+		&.form--input-width-m {  max-width : $form--setting-max-width-input-m; }
+		&.form--input-width-l {  max-width : $form--setting-max-width-input-l; }
+	}
+
+}
+
+
+@include respond($break-medium, $break-large) {
+
+	.form {
+		width: $form--setting-with-form-medium;
+		margin: 0 auto;
+	}
+
+
+	.form--intro {
+		padding: $form--setting-padding-intro-medium;
+	}
+
+
+	.form--top-error {
+		margin-top: 40px;
+		padding: 30px 20px 30px 200px;
+	}
+
+
+	.form--fieldset {
+		padding: $form--setting-padding-fieldset-medium;
+	}
+
+
+	.form--subtitle {
+		padding-left: $form--setting-width-subbox-medium;
+	}
+
+
+	.form--row {
+		@include clearfix;
+		> .form--messages {
+			margin-left: $form--setting-width-subbox-medium;
+		}
+	}
+
+
+	.form--subbox {
+		float: left;
+		width: $form--setting-width-subbox-medium;
+		padding-right: $form--setting-padding-right-subbox-medium;
+		text-align: right;
+	}
+
+
+	.form--mainbox {
+		float: right;
+		width: $form--setting-max-width-mainbox-medium;
+		padding-right: $form--setting-max-width-mainbox-medium - $form--setting-max-width-input;
+	}
+
+
+	.form--label,
+	.form--label-radio,
+	.form--label-checkbox {
+		padding-top: $form--setting-padding-top-label-medium;
+		padding-bottom: $form--setting-padding-bottom-label-medium;
+	}
+
+
+	.form--label {
+		&.form--label-size-xs { font-size: $form--setting-font-size-label-xs }
+		&.form--label-size-s  { font-size: $form--setting-font-size-label-s }
+		&.form--label-size-m  { font-size: $form--setting-font-size-label-m }
+		&.form--label-size-l  { font-size: $form--setting-font-size-label-l }
+	}
+
+
+	.form--input {
+		width: $form--setting-max-width-input;
+		&.form--input-width-xs { max-width: $form--setting-max-width-input-xs; }
+		&.form--input-width-s {  max-width: $form--setting-max-width-input-s; }
+		&.form--input-width-m {  max-width: $form--setting-max-width-input-m; }
+		&.form--input-width-l { max-width: $form--setting-max-width-input-l; }
+	}
+
+}
+
+
+@include respond($break-large) {
+
+	.form {
+		width: $form--setting-with-form-large;
+		margin: 0 auto;
+	}
+
+
+	.form--intro {
+		padding: $form--setting-padding-intro-large;
+	}
+
+
+	.form--top-error {
+		border-radius: $form--setting-border-radius;
+		margin-top: 40px;
+		padding: 30px 20px 30px 200px;
+	}
+
+
+	.form--fieldset {
+		padding: $form--setting-padding-fieldset-large;
+	}
+
+
+	.form--subtitle {
+		padding-left: $form--setting-width-subbox-large;
+	}
+
+
+	.form--row {
+		@include clearfix;
+		> .form--messages {
+			margin-left: $form--setting-width-subbox-large;
+		}
+	}
+
+
+	.form--subbox {
+		float: left;
+		width: $form--setting-width-subbox-large;
+		padding-right: $form--setting-padding-right-subbox-large;
+		text-align: right;
+	}
+
+
+	.form--mainbox {
+		float: right;
+		width: $form--setting-max-width-mainbox-large;
+		padding-right: $form--setting-max-width-mainbox-large - $form--setting-max-width-input;
+	}
+
+
+	.form--label,
+	.form--label-radio,
+	.form--label-checkbox {
+		padding-top: $form--setting-padding-top-label-large;
+		padding-bottom: $form--setting-padding-bottom-label-large;
+	}
+
+
+	.form--label {
+		&.form--label-size-xs { font-size: $form--setting-font-size-label-xs }
+		&.form--label-size-s  { font-size: $form--setting-font-size-label-s }
+		&.form--label-size-m  { font-size: $form--setting-font-size-label-m }
+		&.form--label-size-l  { font-size: $form--setting-font-size-label-l }
+	}
+
+
+	.form--input {
+		width: $form--setting-max-width-input;
+		&.form--input-width-xs { max-width: $form--setting-max-width-input-xs; }
+		&.form--input-width-s {  max-width: $form--setting-max-width-input-s; }
+		&.form--input-width-m {  max-width: $form--setting-max-width-input-m; }
+		&.form--input-width-l { max-width: $form--setting-max-width-input-l; }
+	}
+
+}

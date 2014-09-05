@@ -1,0 +1,49 @@
+body {
+	font-family                 : $form--setting-font-family;
+	font-size                   : $form--setting-font-size;
+	line-height                 : $form--setting-line-height;
+	color                       : $form--color-text;
+	word-wrap                   : break-word;
+	background-color                 : $form--color-background;
+
+	-webkit-font-smoothing      : antialiased;
+	-webkit-text-size-adjust    : none;
+	-webkit-tap-highlight-color : $form--color-webkit-tab-highlight;
+
+	-moz-osx-font-smoothing     : grayscale;
+}
+
+.inner  {
+	margin                      : 0 auto;
+	position                    : relative;
+	background-color            : $form--color-background-inner;
+}
+
+a {
+	color                       : $form--color-links;
+	text-decoration             : none;
+	padding-bottom              : $form--setting-padding-bottom-link;
+	border-bottom               : $form--setting-border-bottom-link;
+}
+
+
+@include respond($break-medium, $break-large) {
+
+	.inner {
+		margin-top    : $form--setting-margin-top-inner-medium;
+		margin-bottom : $form--setting-margin-bottom-inner-medium;
+		width         : $form--setting-width-inner-medium;
+	}
+
+}
+
+
+@include respond($break-large) {
+
+	.inner {
+		margin-top    : $form--setting-margin-top-inner-large;
+		margin-bottom : $form--setting-margin-bottom-inner-large;
+		width         : $form--setting-width-inner-large;
+	}
+
+}

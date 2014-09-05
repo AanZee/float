@@ -1,0 +1,184 @@
+//////////////////////////////////////////////////////////////
+////////////////////// ELEMENT COLORS ////////////////////////
+//////////////////////////////////////////////////////////////
+
+
+$form--color-text                           : #073642;
+
+$form--color-highlight                      : #268bd2;
+
+$form--color-border-error-message           : #aaaaaa;
+
+$form--color-error                          : #dc322f;
+$form--color-error-background               : rgba($form--color-error, .15);
+$form--color-valid                          : #859900;
+$form--color-warning                        : #FFCC00;
+
+$form--color-background                     : #698282;
+$form--color-background-inner               : #fdf6e3;
+$form--color-background-error-message       : #ffffff;
+
+$form--color-webkit-tab-highlight           : rgba(0,0,0,0); // Remove default tab hightlight color
+
+$form--color-text-title                     : $form--color-highlight;
+$form--color-text-subtitle                  : $form--color-highlight;
+$form--color-links                          : $form--color-highlight;
+
+
+//////////////////////////////////////////////////////////////
+///////////////////// ELEMENT SETTINGS ///////////////////////
+//////////////////////////////////////////////////////////////
+
+
+$form--setting-font-family                  : "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+
+// Font sizes
+$form--setting-font-size                    : 18px;
+$form--setting-font-size-form               : 16px;
+$form--setting-font-size-title              : 48px;
+$form--setting-font-size-subtitle           : 24px;
+$form--setting-font-size-input              : 16px;
+$form--setting-font-size-error              : 14px;
+$form--setting-font-size-description        : 14px;
+$form--setting-font-size-submit             : 18px;
+
+$form--setting-font-size-label-xs           : 12px;
+$form--setting-font-size-label-s            : 13px;
+$form--setting-font-size-label-m            : 14px;
+$form--setting-font-size-label-l            : 15px;
+
+
+// Line heights
+$form--setting-line-height                  : 27px;
+$form--setting-line-height-form             : 24px;
+$form--setting-line-height-title            : 54px;
+$form--setting-line-height-error            : 21px;
+
+
+// Font weights
+$form--setting-font-weight-title            : bold;
+$form--setting-font-weight-subtitle         : bold;
+$form--setting-font-weight-label            : bold;
+
+
+// Widths
+$form--setting-width-inner-medium           : 720px;
+$form--setting-width-inner-large            : 920px;
+
+$form--setting-with-form-medium             : 720px;
+$form--setting-with-form-large              : 720px;
+
+$form--setting-width-subbox-medium          : 200px;
+$form--setting-width-subbox-large           : 200px;
+
+$form--setting-max-width-mainbox-small      : 400px;
+$form--setting-max-width-mainbox-medium     : 520px;
+$form--setting-max-width-mainbox-large      : 520px;
+
+$form--setting-max-width-input              : 400px;
+$form--setting-max-width-input-xs           : 60px;
+$form--setting-max-width-input-s            : 100px;
+$form--setting-max-width-input-m            : 200px;
+$form--setting-max-width-input-l            : 300px;
+
+
+// Spacing (padding)
+$form--setting-padding-fieldset-small       : 30px 20px;
+$form--setting-padding-fieldset-medium      : 30px 0;
+$form--setting-padding-fieldset-large       : 30px 0;
+
+$form--setting-padding-row                  : 7px 0;
+
+$form--setting-padding-right-subbox-medium  : 10px;
+$form--setting-padding-right-subbox-large   : 10px;
+
+$form--setting-padding-top-label-small      : 10px;
+$form--setting-padding-bottom-label-small   : 10px;
+$form--setting-padding-top-label-medium     : 10px;
+$form--setting-padding-bottom-label-medium  : 10px;
+$form--setting-padding-top-label-large      : 10px;
+$form--setting-padding-bottom-label-large   : 10px;
+
+$form--setting-padding-bottom-link          : 3px;
+$form--setting-padding-bottom-form          : 40px;
+
+$form--setting-padding-intro-small          : 40px 20px;
+$form--setting-padding-intro-medium         : 80px 100px;
+$form--setting-padding-intro-large          : 80px 100px;
+
+
+// Spacing (margin)
+$form--setting-margin-top-subtitle          : 27px;
+$form--setting-margin-bottom-subtitle       : 9px;
+
+$form--setting-margin-bottom-label          : 3px;
+
+$form--setting-margin-top-inner-large       : 40px;
+$form--setting-margin-bottom-inner-large    : 40px;
+$form--setting-margin-top-inner-medium      : 20px;
+$form--setting-margin-bottom-inner-medium   : 20px;
+
+
+// Borders
+$form--setting-border-bottom-link           : 1px solid $form--color-highlight;
+$form--setting-border-bottom-intro          : 4px solid #e9dfbe;
+$form--setting-border-bottom-fieldset       : 2px solid #e9dfbe;
+
+
+// Input element
+$form--setting-input-height                 : 44px; // Total height including padding and line height
+$form--setting-input-padding                : 10px 15px;
+$form--setting-input-line-height            : 24px;
+$form--setting-input-background-color       : #ffffff;
+
+$form--setting-input-box-shadow             : 0 0 0 1px #aaa, inset 0 1px 2px rgba(0,0,0,.15); // fake border
+$form--setting-input-box-shadow-focus       : 0 0 0 2px $form--color-highlight, inset 0 1px 2px rgba(0,0,0,.15);
+
+$form--setting-input-box-shadow-valid       : 0 0 0 1px $form--color-valid, inset 0 1px 2px rgba(0,0,0,.15);
+$form--setting-input-box-shadow-valid-focus : 0 0 0 2px $form--color-valid, inset 0 1px 2px rgba(0,0,0,.15);
+
+$form--setting-input-box-shadow-error       : 0 0 0 1px $form--color-error, inset 0 1px 2px rgba(0,0,0,.15);
+$form--setting-input-box-shadow-error-focus : 0 0 0 2px $form--color-error, inset 0 1px 2px rgba(0,0,0,.15);
+
+
+// Checkboxes and radios (car)
+$form--setting-car-box-shadow-focus         : 0 0 0 2px $form--color-highlight;
+$form--setting-car-checked-color            : $form--color-text;
+$form--setting-car-margin-right             : 2px;
+
+$form--setting-car-padding-left             : 22px;
+$form--setting-car-padding-right            : 15px;
+
+$form--setting-car-indicator-top            : 14px;
+$form--setting-car-indicator-left           : 0;
+$form--setting-car-indicator-background     : #ffffff;
+$form--setting-car-indicator-box-shadow     : 0 0 0 1px #74787c; // fake border
+
+$form--setting-car-boxed-background         : rgba(0,0,0,.07);
+$form--setting-car-boxed-padding-left       : 36px;
+$form--setting-car-boxed-inidcator-left     : 11px;
+
+// Select 
+$form--setting-select-box-shadow            : 0 0 0 1px #aaa;
+$form--setting-select-box-shadow-focus      : 0 0 0 2px $form--color-highlight;
+
+
+// Border radius
+$form--setting-border-radius                : 6px;
+$form--setting-border-radius-checkbox       : 3px;
+
+
+// Errors
+$form--setting-error-box-margin             : 6px 0;
+
+$form--setting-error-message-padding        : 6px 14px;
+$form--setting-error-message-max-width      : 400px;
+
+
+// Submit button
+$form--setting-submit-padding               : 10px 40px;
+$form--setting-submit-background            : $form--color-highlight;
+$form--setting-submit-background-hover      : lighten($form--color-highlight, 5%);
+$form--setting-submit-color                 : #ffffff;
+$form--setting-submit-border-bottom         : 2px solid darken($form--color-highlight, 20%);
