@@ -59,7 +59,7 @@
 
 .form--row {
 	padding: $form--setting-padding-row;
-	> .form--messages .form--message-error {
+	> .messages .message-error {
 		@include arrow-on-bottom-line(8px, $form--color-border-error-message, $form--color-background-error-message, 15px);
 	}
 }
@@ -68,7 +68,7 @@
 .form--mainbox {
 	@include clearfix;
 	position: relative;
-	.form--message-error {
+	.message-error {
 		@include arrow-on-top-line(8px, $form--color-border-error-message, $form--color-background-error-message, 15px);
 	}
 }
@@ -79,9 +79,9 @@
 }
 
 
-.form--icon-holder {
-	.form--icon-check,
-	.form--icon-exclamation {
+.icon-holder {
+	.icon-check,
+	.icon-exclamation {
 		width: 18px;
 		height: 18px;
 		line-height: 16px;
@@ -96,11 +96,11 @@
 		display: none;
 	}
 
-	.form--icon-check {
+	.icon-check {
 		background-color: $form--color-valid;
 	}
 
-	.form--icon-exclamation {
+	.icon-exclamation {
 		background-color: $form--color-error;
 	}
 }
@@ -145,6 +145,27 @@
 	position: absolute;
 	opacity: 0;
 	z-index: -1;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-check:before {
+	content: "\2713";
+}
+
+.icon-exclamation:before {
+	content: "!";
 }
 
 .form--input-select {
@@ -318,7 +339,7 @@
 .form--label-checkbox .form--input-indicator {
 	border-radius: $form--setting-border-radius-checkbox;
 	font-size: 12px;
-	.form--icon-check {
+	.icon-check {
 		line-height: 16px;
 	}
 }
@@ -328,7 +349,7 @@
 //////////////////////////////////////////////////////////////
 
 
-.form--row-error {
+.is-error {
 
 	.form--label {
 		color: $form--color-error;
@@ -358,8 +379,8 @@
 		}
 	}
 
-	.form--icon-holder {
-		.form--icon-exclamation {
+	.icon-holder {
+		.icon-exclamation {
 			display: block;
 		}
 	}
@@ -367,11 +388,11 @@
 
 }
 
-.form--messages {
+.messages {
 	@include clearfix;
 }
 
-.form--message-error {
+.message-error {
 	float            : left;
 	background-color : $form--color-background-error-message;
 	color            : $form--color-text;
@@ -385,9 +406,9 @@
 }
 
 
-.form--row-valid {
-	.form--icon-holder {
-		.form--icon-check {
+.is-valid {
+	.icon-holder {
+		.icon-check {
 			display: block;
 		}
 	}
@@ -508,7 +529,7 @@
 
 	.form--row {
 		@include clearfix;
-		> .form--messages {
+		> .messages {
 			margin-left: $form--setting-width-subbox-medium;
 		}
 	}
@@ -588,7 +609,7 @@
 
 	.form--row {
 		@include clearfix;
-		> .form--messages {
+		> .messages {
 			margin-left: $form--setting-width-subbox-large;
 		}
 	}
